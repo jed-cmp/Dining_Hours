@@ -1,0 +1,136 @@
+<resources>
+    <string name="app_name"
+        >A&amp;M Dining</string>
+
+    <string name="headline"
+        >What\'s Open on Campus?</string>
+
+    <string name="commons"
+        >Dining at the Commons</string>
+
+    <string name="southside_market"
+        >Southside Market</string>
+
+    <string name="duncan"
+        >Duncan Dining Hall</string>
+
+    <string name="starbucks_corps"
+        >Starbucks @Corps, LLC</string>
+
+    <string name="aggie_express_pavillion"
+        >Aggie Express @Pavilion</string>
+
+    <string name="grill"
+        >Grill @Pavilion</string>
+
+    <string name="starbucks_evans"
+        >Starbucks @Evans</string>
+
+    <string name="brazos_valley"
+        >Brazos Valley BBQ</string>
+
+    <string name="m2o"
+        >M2O Deli</string>
+
+    <string name="cabo"
+        >Cabo Mexican Grill</string>
+
+    <string name="zatar"
+        >Zatar Mediterranean</string>
+
+    <string name="bee_creek"
+        >Bee Creek Pizza</string>
+
+    <string name="revs"
+        >Rev\'s American Grill</string>
+
+    <string name="chicken_grill"
+        >Chicken Grill @MSC</string>
+    
+    <string name="panda_express"
+        >Panda Express @MSC</string>
+
+    <string name="smoothie_king_msc"
+        >Smoothie King @MSC</string>
+
+    <string name="university_club"
+        >University Club</string>
+
+    <string name="which_wich"
+        > Which Wich @AgCafe</string>
+
+    <string name="chickfila_agcafe"
+        >Chick-fil-A @AgCafe</string>
+
+    <string name="revs_express"
+        >Rev\'s Express @AgCafe</string>
+
+    <string name="st_club"
+        >41st Club</string>
+
+    <string name="westside_exchange"
+        >Westside Exchange</string>
+
+    <string name="smoothie_king_rec"
+        >Smoothie King @Rec</string>
+
+    <string name="vet_med"
+        >Vet Med Cafe</string>
+
+    <string name="gig_em"
+        >Gig Em &amp; Go</string>
+    
+    <string name="pap_johns"
+        >Papa John\'s @UFC</string>
+
+    <string name="chickfila_ufc"
+        >Chick-fil-A @UFC</string>
+    
+    <string name="houston_subs"
+        >Houston Street Subs @UFC</string>
+
+    <string name="smoothie_king_ufc"
+        >Smoothie King @UFC</string>
+
+    <string name="lime"
+        >Lime Fresh Mexican</string>
+
+    <string name="smashburger"
+        >Smashburger</string>
+
+    <string name="sbisa"
+        >Sbisa Dining Hall</string>
+    
+    <string name="aggie_express_ufc"
+        >Aggie Express @UFC</string>
+    
+    <string name="aggie_express_hullabaloo"
+        >Aggie Express @Hullabaloo</string>
+    
+    <string name="outtakes"
+        >Outtakes @Blocker</string>
+
+    <string name="azimuth"
+        >Azimuth</string>
+
+    <string name="einsteins"
+        >Einsteins Brother\'s Bagels</string>
+    
+    <string name="starbucks_hullabaloo"
+        >Starbucks @Hullabaloo</string>
+
+    <string name="eted_sidewalk"
+        >ETED Sidewalk Café</string>
+
+    <string name="dr_joes"
+        >Dr. Joe\'s @HSC</string>
+
+    <string name="aggie_express_commons"
+        >Aggie Express @Commons</string>
+
+    <string name="white_creek"
+        >White Creek Food Truck</string>
+
+
+
+</resources>

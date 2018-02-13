@@ -1,0 +1,2886 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity" >
+<com.sothree.slidinguppanel.SlidingUpPanelLayout
+    xmlns:sothree="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/sliding_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="bottom"
+    sothree:umanoPanelHeight="24dp"
+    sothree:umanoShadowHeight="4dp">
+
+    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.jed.dininghours.MainActivity">
+
+        <android.support.constraint.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.55" />
+
+        <TextView
+            android:id="@+id/txtClock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginRight="4dp"
+            android:layout_marginTop="16dp"
+            android:layout_toEndOf="@+id/guideline"
+            android:layout_weight="1"
+            android:text="7:00"
+            android:textAppearance="@android:style/TextAppearance.Material.Headline"
+            android:textSize="60sp"
+            app:layout_constraintRight_toLeftOf="@+id/guideline"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginEnd="4dp" />
+
+        <TextView
+            android:id="@+id/txtDayOfWeek"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/txtClock"
+            android:layout_alignBottom="@+id/txtClock"
+            android:layout_marginBottom="16dp"
+            android:layout_marginLeft="4dp"
+            android:layout_toEndOf="@+id/txtClock"
+            android:layout_weight="1"
+            android:text="Friday"
+            android:textAllCaps="true"
+            android:textAppearance="@android:style/TextAppearance.Material.Subhead"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="@+id/txtClock"
+            app:layout_constraintLeft_toLeftOf="@+id/guideline"
+            android:layout_marginStart="4dp" />
+
+        <TabHost
+            android:id="@+id/Tabs"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtClock">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TabWidget
+                    android:id="@android:id/tabs"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <FrameLayout
+                    android:id="@android:id/tabcontent"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:id="@+id/Central"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <ScrollView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            app:layout_constraintTop_toBottomOf="@+id/seekBar6"
+                            tools:layout_editor_absoluteX="16dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@color/colorOffWhite"
+                                android:orientation="vertical"
+                                tools:layout_editor_absoluteX="16dp"
+                                tools:layout_editor_absoluteY="149dp">
+
+                                <android.support.v7.widget.CardView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="72dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:layout_marginLeft="8dp"
+                                    android:layout_marginRight="8dp"
+                                    android:layout_marginTop="8dp"
+                                    app:cardElevation="1dp">
+
+                                    <android.support.constraint.ConstraintLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent">
+
+                                        <ImageView
+                                            android:id="@+id/pngAggieExpressPavilion"
+                                            android:layout_width="72dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginBottom="8dp"
+                                            android:layout_marginStart="16dp"
+                                            android:layout_marginTop="8dp"
+                                            android:src="@drawable/aggie_express_logo"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintStart_toStartOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                        <TextView
+                                            android:id="@+id/txtAggieExpressPavilion"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginStart="16dp"
+                                            android:layout_marginTop="16dp"
+                                            android:text="@string/aggie_express_pavillion"
+                                            android:textColor="@color/colorClosing"
+                                            android:textSize="18sp"
+                                            android:textStyle="bold"
+                                            app:layout_constraintStart_toEndOf="@+id/pngAggieExpressPavilion"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                        <TextView
+                                            android:id="@+id/hrsAggieExpressPavilion"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginBottom="16dp"
+                                            android:layout_marginStart="24dp"
+                                            android:text="08 - 20 hrs"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintStart_toEndOf="@+id/pngAggieExpressPavilion" />
+
+                                        <ImageView
+                                            android:id="@+id/statusAggieExpressPavilion"
+                                            android:layout_width="72dp"
+                                            android:layout_height="0dp"
+                                            android:layout_marginBottom="12dp"
+                                            android:layout_marginTop="12dp"
+                                            android:src="@drawable/ic_local_dining_gray_36dp"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintEnd_toEndOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                    </android.support.constraint.ConstraintLayout>
+                                </android.support.v7.widget.CardView>
+
+                                <android.support.v7.widget.CardView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="72dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:layout_marginLeft="8dp"
+                                    android:layout_marginRight="8dp"
+                                    app:cardElevation="1dp">
+
+                                    <android.support.constraint.ConstraintLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent">
+
+                                        <ImageView
+                                            android:id="@+id/pngBrazosValley"
+                                            android:layout_width="72dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginBottom="8dp"
+                                            android:layout_marginLeft="16dp"
+                                            android:layout_marginTop="8dp"
+                                            android:paddingBottom="6dp"
+                                            android:paddingTop="6dp"
+                                            android:src="@drawable/brazos_valley"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintLeft_toLeftOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                        <TextView
+                                            android:id="@+id/txtBrazosValley"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="16dp"
+                                            android:layout_marginStart="16dp"
+                                            android:layout_marginTop="16dp"
+                                            android:text="@string/brazos_valley"
+                                            android:textColor="@color/colorClosing"
+                                            android:textSize="18sp"
+                                            android:textStyle="bold"
+                                            app:layout_constraintLeft_toRightOf="@+id/pngBrazosValley"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                        <TextView
+                                            android:id="@+id/hrsBrazosValley"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginBottom="16dp"
+                                            android:layout_marginLeft="24dp"
+                                            android:text="08 - 20 hrs"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintLeft_toRightOf="@+id/pngBrazosValley" />
+
+                                        <ImageView
+                                            android:id="@+id/statusBrazosValley"
+                                            android:layout_width="72dp"
+                                            android:layout_height="0dp"
+                                            android:layout_marginBottom="12dp"
+                                            android:layout_marginTop="12dp"
+                                            android:src="@drawable/ic_local_dining_gray_36dp"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintRight_toRightOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                    </android.support.constraint.ConstraintLayout>
+                                </android.support.v7.widget.CardView>
+
+                                <android.support.v7.widget.CardView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="72dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:layout_marginLeft="8dp"
+                                    android:layout_marginRight="8dp"
+                                    app:cardElevation="1dp">
+
+                                    <android.support.constraint.ConstraintLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent">
+
+                                        <ImageView
+                                            android:id="@+id/pngM2O"
+                                            android:layout_width="72dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginBottom="8dp"
+                                            android:layout_marginLeft="16dp"
+                                            android:layout_marginTop="8dp"
+                                            android:src="@drawable/m20"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintLeft_toLeftOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                        <TextView
+                                            android:id="@+id/txtM2O"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="16dp"
+                                            android:layout_marginStart="16dp"
+                                            android:layout_marginTop="16dp"
+                                            android:text="@string/m2o"
+                                            android:textAlignment="center"
+                                            android:textColor="@color/colorClosing"
+                                            android:textSize="18sp"
+                                            android:textStyle="bold"
+                                            app:layout_constraintLeft_toRightOf="@+id/pngM2O"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                        <TextView
+                                            android:id="@+id/hrsM2O"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginBottom="16dp"
+                                            android:layout_marginLeft="24dp"
+                                            android:text="08 - 20 hrs"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintLeft_toRightOf="@+id/pngM2O" />
+
+                                        <ImageView
+                                            android:id="@+id/statusM2O"
+                                            android:layout_width="72dp"
+                                            android:layout_height="0dp"
+                                            android:layout_marginBottom="12dp"
+                                            android:layout_marginTop="12dp"
+                                            android:src="@drawable/ic_local_dining_gray_36dp"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintRight_toRightOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                    </android.support.constraint.ConstraintLayout>
+                                </android.support.v7.widget.CardView>
+
+                                <android.support.v7.widget.CardView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="72dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:layout_marginLeft="8dp"
+                                    android:layout_marginRight="8dp"
+                                    app:cardElevation="1dp">
+
+                                    <android.support.constraint.ConstraintLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent">
+
+                                        <ImageView
+                                            android:id="@+id/pngCabo"
+                                            android:layout_width="72dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginBottom="8dp"
+                                            android:layout_marginLeft="16dp"
+                                            android:layout_marginTop="8dp"
+                                            android:src="@drawable/cabo"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintLeft_toLeftOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                        <TextView
+                                            android:id="@+id/txtCabo"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="16dp"
+                                            android:layout_marginStart="16dp"
+                                            android:layout_marginTop="16dp"
+                                            android:text="@string/cabo"
+                                            android:textColor="@color/colorClosing"
+                                            android:textSize="18sp"
+                                            android:textStyle="bold"
+                                            app:layout_constraintLeft_toRightOf="@+id/pngCabo"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                        <TextView
+                                            android:id="@+id/hrsCabo"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginBottom="16dp"
+                                            android:layout_marginLeft="24dp"
+                                            android:text="08 - 20 hrs"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintLeft_toRightOf="@+id/pngCabo" />
+
+                                        <ImageView
+                                            android:id="@+id/statusCabo"
+                                            android:layout_width="72dp"
+                                            android:layout_height="0dp"
+                                            android:layout_marginBottom="12dp"
+                                            android:layout_marginTop="12dp"
+                                            android:src="@drawable/ic_local_dining_gray_36dp"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintRight_toRightOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+                                    </android.support.constraint.ConstraintLayout>
+                                </android.support.v7.widget.CardView>
+
+                                <android.support.v7.widget.CardView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="72dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:layout_marginLeft="8dp"
+                                    android:layout_marginRight="8dp"
+                                    app:cardElevation="1dp">
+
+                                    <android.support.constraint.ConstraintLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent">
+
+                                        <ImageView
+                                            android:id="@+id/pngZatar"
+                                            android:layout_width="72dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginBottom="8dp"
+                                            android:layout_marginLeft="16dp"
+                                            android:layout_marginTop="8dp"
+                                            android:src="@drawable/zatar"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintLeft_toLeftOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                        <TextView
+                                            android:id="@+id/txtZatar"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="16dp"
+                                            android:layout_marginStart="16dp"
+                                            android:layout_marginTop="16dp"
+                                            android:text="@string/zatar"
+                                            android:textColor="@color/colorClosing"
+                                            android:textSize="18sp"
+                                            android:textStyle="bold"
+                                            app:layout_constraintLeft_toRightOf="@+id/pngZatar"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                        <TextView
+                                            android:id="@+id/hrsZatar"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginBottom="16dp"
+                                            android:layout_marginLeft="24dp"
+                                            android:text="08 - 20 hrs"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintLeft_toRightOf="@+id/pngZatar" />
+
+                                        <ImageView
+                                            android:id="@+id/statusZatar"
+                                            android:layout_width="72dp"
+                                            android:layout_height="0dp"
+                                            android:layout_marginBottom="12dp"
+                                            android:layout_marginTop="12dp"
+                                            android:src="@drawable/ic_local_dining_gray_36dp"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintRight_toRightOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+                                    </android.support.constraint.ConstraintLayout>
+                                </android.support.v7.widget.CardView>
+
+                                <android.support.v7.widget.CardView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="72dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:layout_marginLeft="8dp"
+                                    android:layout_marginRight="8dp"
+                                    app:cardElevation="1dp">
+
+                                    <android.support.constraint.ConstraintLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent">
+
+                                        <ImageView
+                                            android:id="@+id/pngBeeCreek"
+                                            android:layout_width="72dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginBottom="8dp"
+                                            android:layout_marginLeft="16dp"
+                                            android:layout_marginTop="8dp"
+                                            android:paddingBottom="6dp"
+                                            android:paddingTop="6dp"
+                                            android:src="@drawable/bee_creek"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintLeft_toLeftOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                        <TextView
+                                            android:id="@+id/txtBeeCreek"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="16dp"
+                                            android:layout_marginStart="16dp"
+                                            android:layout_marginTop="16dp"
+                                            android:text="@string/bee_creek"
+                                            android:textColor="@color/colorClosing"
+                                            android:textSize="18sp"
+                                            android:textStyle="bold"
+                                            app:layout_constraintLeft_toRightOf="@+id/pngBeeCreek"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                        <TextView
+                                            android:id="@+id/hrsBeeCreek"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginBottom="16dp"
+                                            android:layout_marginLeft="24dp"
+                                            android:text="08 - 20 hrs"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintLeft_toRightOf="@+id/pngBeeCreek" />
+
+                                        <ImageView
+                                            android:id="@+id/statusBeeCreek"
+                                            android:layout_width="72dp"
+                                            android:layout_height="0dp"
+                                            android:layout_marginBottom="12dp"
+                                            android:layout_marginTop="12dp"
+                                            android:src="@drawable/ic_local_dining_gray_36dp"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintRight_toRightOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+                                    </android.support.constraint.ConstraintLayout>
+                                </android.support.v7.widget.CardView>
+
+                                <android.support.v7.widget.CardView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="72dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:layout_marginLeft="8dp"
+                                    android:layout_marginRight="8dp"
+                                    app:cardElevation="1dp">
+
+                                    <android.support.constraint.ConstraintLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent">
+
+                                        <ImageView
+                                            android:id="@+id/pngRevs"
+                                            android:layout_width="72dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginBottom="8dp"
+                                            android:layout_marginLeft="16dp"
+                                            android:layout_marginStart="16dp"
+                                            android:layout_marginTop="8dp"
+                                            android:src="@drawable/revs"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintLeft_toLeftOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                        <TextView
+                                            android:id="@+id/txtRevs"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="16dp"
+                                            android:layout_marginStart="16dp"
+                                            android:layout_marginTop="16dp"
+                                            android:text="@string/revs"
+                                            android:textColor="@color/colorClosing"
+                                            android:textSize="18sp"
+                                            android:textStyle="bold"
+                                            app:layout_constraintLeft_toRightOf="@+id/pngRevs"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                        <TextView
+                                            android:id="@+id/hrsRevs"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginBottom="16dp"
+                                            android:layout_marginLeft="24dp"
+                                            android:text="08 - 20 hrs"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintLeft_toRightOf="@+id/pngRevs" />
+
+                                        <ImageView
+                                            android:id="@+id/statusRevs"
+                                            android:layout_width="72dp"
+                                            android:layout_height="0dp"
+                                            android:layout_marginBottom="12dp"
+                                            android:layout_marginTop="12dp"
+                                            android:src="@drawable/ic_local_dining_gray_36dp"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintRight_toRightOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+                                    </android.support.constraint.ConstraintLayout>
+                                </android.support.v7.widget.CardView>
+
+                                <android.support.v7.widget.CardView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="72dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:layout_marginLeft="8dp"
+                                    android:layout_marginRight="8dp"
+                                    app:cardElevation="1dp">
+
+                                    <android.support.constraint.ConstraintLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent">
+
+                                        <ImageView
+                                            android:id="@+id/pngChickenGrill"
+                                            android:layout_width="72dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginBottom="8dp"
+                                            android:layout_marginLeft="16dp"
+                                            android:layout_marginStart="16dp"
+                                            android:layout_marginTop="8dp"
+                                            android:src="@drawable/chick_n_grill"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintLeft_toLeftOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                        <TextView
+                                            android:id="@+id/txtChickenGrill"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="16dp"
+                                            android:layout_marginStart="16dp"
+                                            android:layout_marginTop="16dp"
+                                            android:text="@string/chicken_grill"
+                                            android:textColor="@color/colorClosing"
+                                            android:textSize="18sp"
+                                            android:textStyle="bold"
+                                            app:layout_constraintLeft_toRightOf="@+id/pngChickenGrill"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                        <TextView
+                                            android:id="@+id/hrsChickenGrill"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginBottom="16dp"
+                                            android:layout_marginLeft="24dp"
+                                            android:text="08 - 20 hrs"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintLeft_toRightOf="@+id/pngChickenGrill" />
+
+                                        <ImageView
+                                            android:id="@+id/statusChickenGrill"
+                                            android:layout_width="72dp"
+                                            android:layout_height="0dp"
+                                            android:layout_marginBottom="12dp"
+                                            android:layout_marginTop="12dp"
+                                            android:src="@drawable/ic_local_dining_gray_36dp"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintRight_toRightOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+                                    </android.support.constraint.ConstraintLayout>
+                                </android.support.v7.widget.CardView>
+
+                                <android.support.v7.widget.CardView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="72dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:layout_marginLeft="8dp"
+                                    android:layout_marginRight="8dp"
+                                    app:cardElevation="1dp">
+
+                                    <android.support.constraint.ConstraintLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent">
+
+                                        <ImageView
+                                            android:id="@+id/pngPandaExpress"
+                                            android:layout_width="72dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginBottom="8dp"
+                                            android:layout_marginLeft="16dp"
+                                            android:layout_marginStart="16dp"
+                                            android:layout_marginTop="8dp"
+                                            android:paddingBottom="8dp"
+                                            android:paddingTop="8dp"
+                                            android:src="@drawable/panda_express"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintLeft_toLeftOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                        <TextView
+                                            android:id="@+id/txtPandaExpress"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="16dp"
+                                            android:layout_marginStart="16dp"
+                                            android:layout_marginTop="16dp"
+                                            android:text="@string/panda_express"
+                                            android:textColor="@color/colorClosing"
+                                            android:textSize="18sp"
+                                            android:textStyle="bold"
+                                            app:layout_constraintLeft_toRightOf="@+id/pngPandaExpress"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                        <TextView
+                                            android:id="@+id/hrsPandaExpress"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginBottom="16dp"
+                                            android:layout_marginLeft="24dp"
+                                            android:text="08 - 20 hrs"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintLeft_toRightOf="@+id/pngPandaExpress" />
+
+                                        <ImageView
+                                            android:id="@+id/statusPandaExpress"
+                                            android:layout_width="72dp"
+                                            android:layout_height="0dp"
+                                            android:layout_marginBottom="12dp"
+                                            android:layout_marginTop="12dp"
+                                            android:src="@drawable/ic_local_dining_gray_36dp"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintRight_toRightOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+                                    </android.support.constraint.ConstraintLayout>
+                                </android.support.v7.widget.CardView>
+
+                                <android.support.v7.widget.CardView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="72dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:layout_marginLeft="8dp"
+                                    android:layout_marginRight="8dp"
+                                    app:cardElevation="1dp">
+
+                                    <android.support.constraint.ConstraintLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent">
+
+                                        <ImageView
+                                            android:id="@+id/pngSmoothieKingMSC"
+                                            android:layout_width="72dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginBottom="8dp"
+                                            android:layout_marginLeft="16dp"
+                                            android:layout_marginStart="16dp"
+                                            android:layout_marginTop="8dp"
+                                            android:paddingBottom="16dp"
+                                            android:paddingTop="8dp"
+                                            android:src="@drawable/smoothie_king_logo"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintLeft_toLeftOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                        <TextView
+                                            android:id="@+id/txtSmoothieKingMSC"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="16dp"
+                                            android:layout_marginStart="16dp"
+                                            android:layout_marginTop="16dp"
+                                            android:text="@string/smoothie_king_msc"
+                                            android:textColor="@color/colorClosing"
+                                            android:textSize="18sp"
+                                            android:textStyle="bold"
+                                            app:layout_constraintLeft_toRightOf="@+id/pngSmoothieKingMSC"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                        <TextView
+                                            android:id="@+id/hrsSmoothieKingMSC"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginBottom="16dp"
+                                            android:layout_marginLeft="24dp"
+                                            android:text="08 - 20 hrs"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintLeft_toRightOf="@+id/pngSmoothieKingMSC" />
+
+                                        <ImageView
+                                            android:id="@+id/statusSmoothieKingMSC"
+                                            android:layout_width="72dp"
+                                            android:layout_height="0dp"
+                                            android:layout_marginBottom="12dp"
+                                            android:layout_marginTop="12dp"
+                                            android:src="@drawable/ic_local_dining_gray_36dp"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintRight_toRightOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                    </android.support.constraint.ConstraintLayout>
+                                </android.support.v7.widget.CardView>
+
+                                <android.support.v7.widget.CardView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="72dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:layout_marginLeft="8dp"
+                                    android:layout_marginRight="8dp"
+                                    app:cardElevation="1dp">
+
+                                    <android.support.constraint.ConstraintLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent">
+
+                                        <ImageView
+                                            android:id="@+id/pngUniversityClub"
+                                            android:layout_width="72dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginBottom="8dp"
+                                            android:layout_marginLeft="16dp"
+                                            android:layout_marginStart="16dp"
+                                            android:layout_marginTop="8dp"
+                                            android:src="@drawable/uclub_logo"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintLeft_toLeftOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                        <TextView
+                                            android:id="@+id/txtUniversityClub"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="16dp"
+                                            android:layout_marginTop="16dp"
+                                            android:text="@string/university_club"
+                                            android:textColor="@color/colorClosing"
+                                            android:textSize="18sp"
+                                            android:textStyle="bold"
+                                            app:layout_constraintLeft_toRightOf="@+id/pngUniversityClub"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                        <TextView
+                                            android:id="@+id/hrsUniversityClub"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginBottom="16dp"
+                                            android:layout_marginLeft="24dp"
+                                            android:text="08 - 20 hrs"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintLeft_toRightOf="@+id/pngUniversityClub" />
+
+                                        <ImageView
+                                            android:id="@+id/statusUniversityClub"
+                                            android:layout_width="72dp"
+                                            android:layout_height="0dp"
+                                            android:layout_marginBottom="12dp"
+                                            android:layout_marginTop="12dp"
+                                            android:src="@drawable/ic_local_dining_gray_36dp"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintRight_toRightOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+                                    </android.support.constraint.ConstraintLayout>
+                                </android.support.v7.widget.CardView>
+
+                            </LinearLayout>
+                        </ScrollView>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/North"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <ScrollView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            app:layout_constraintTop_toBottomOf="@+id/seekBar6"
+                            tools:layout_editor_absoluteX="16dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@color/colorOffWhite"
+                                android:orientation="vertical"
+                                tools:layout_editor_absoluteX="16dp"
+                                tools:layout_editor_absoluteY="149dp">
+
+                                <android.support.v7.widget.CardView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="72dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:layout_marginLeft="8dp"
+                                    android:layout_marginRight="8dp"
+                                    android:layout_marginTop="8dp"
+                                    app:cardElevation="1dp">
+
+                                    <android.support.constraint.ConstraintLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent">
+
+                                        <ImageView
+                                            android:id="@+id/pngETEDSidewalk"
+                                            android:layout_width="72dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginBottom="8dp"
+                                            android:layout_marginLeft="16dp"
+                                            android:layout_marginTop="8dp"
+                                            android:src="@drawable/etedsidewalkcafelogo"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintLeft_toLeftOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                        <TextView
+                                            android:id="@+id/txtETEDSidewalk"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="16dp"
+                                            android:layout_marginTop="16dp"
+                                            android:text="@string/eted_sidewalk"
+                                            android:textColor="@color/colorClosing"
+                                            android:textSize="18sp"
+                                            android:textStyle="bold"
+                                            app:layout_constraintLeft_toRightOf="@+id/pngETEDSidewalk"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                        <TextView
+                                            android:id="@+id/hrsETEDSidewalk"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginBottom="16dp"
+                                            android:layout_marginLeft="24dp"
+                                            android:text="10 - 11 PM"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintLeft_toRightOf="@+id/pngETEDSidewalk" />
+
+                                        <ImageView
+                                            android:id="@+id/statusETEDSidewalk"
+                                            android:layout_width="72dp"
+                                            android:layout_height="0dp"
+                                            android:layout_marginBottom="12dp"
+                                            android:layout_marginTop="12dp"
+                                            android:src="@drawable/ic_local_dining_gray_36dp"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintRight_toRightOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent"
+                                            app:layout_constraintVertical_bias="0.0" />
+
+                                    </android.support.constraint.ConstraintLayout>
+
+                                </android.support.v7.widget.CardView>
+
+                                <android.support.v7.widget.CardView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="72dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:layout_marginLeft="8dp"
+                                    android:layout_marginRight="8dp"
+                                    app:cardElevation="1dp">
+
+                                    <android.support.constraint.ConstraintLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent">
+
+                                        <ImageView
+                                            android:id="@+id/pngPapaJohns"
+                                            android:layout_width="72dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginBottom="8dp"
+                                            android:layout_marginLeft="16dp"
+                                            android:layout_marginTop="8dp"
+                                            android:src="@drawable/papa_johns_logo"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintLeft_toLeftOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                        <TextView
+                                            android:id="@+id/txtPapaJohns"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginStart="16dp"
+                                            android:layout_marginTop="16dp"
+                                            android:text="@string/pap_johns"
+                                            android:textColor="@color/colorClosing"
+                                            android:textSize="18sp"
+                                            android:textStyle="bold"
+                                            app:layout_constraintStart_toEndOf="@+id/pngPapaJohns"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                        <TextView
+                                            android:id="@+id/hrsPapaJohns"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginBottom="16dp"
+                                            android:layout_marginStart="24dp"
+                                            android:text="10 - 11 PM"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintStart_toEndOf="@+id/pngPapaJohns" />
+
+                                        <ImageView
+                                            android:id="@+id/statusPapaJohns"
+                                            android:layout_width="72dp"
+                                            android:layout_height="0dp"
+                                            android:layout_marginBottom="12dp"
+                                            android:layout_marginTop="12dp"
+                                            android:src="@drawable/ic_local_dining_gray_36dp"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintRight_toRightOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent"
+                                            app:layout_constraintVertical_bias="0.0" />
+
+                                    </android.support.constraint.ConstraintLayout>
+
+                                </android.support.v7.widget.CardView>
+
+                                <android.support.v7.widget.CardView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="72dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:layout_marginLeft="8dp"
+                                    android:layout_marginRight="8dp"
+                                    app:cardElevation="1dp">
+
+                                    <android.support.constraint.ConstraintLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent">
+
+                                        <ImageView
+                                            android:id="@+id/pngChickfilAUFC"
+                                            android:layout_width="72dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginBottom="8dp"
+                                            android:layout_marginLeft="16dp"
+                                            android:layout_marginStart="16dp"
+                                            android:layout_marginTop="8dp"
+                                            android:src="@drawable/chick_fil_a"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintLeft_toLeftOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                        <TextView
+                                            android:id="@+id/txtChickfilAUFC"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="16dp"
+                                            android:layout_marginTop="16dp"
+                                            android:text="@string/chickfila_ufc"
+                                            android:textColor="@color/colorClosing"
+                                            android:textSize="18sp"
+                                            android:textStyle="bold"
+                                            app:layout_constraintLeft_toRightOf="@+id/pngChickfilAUFC"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                        <TextView
+                                            android:id="@+id/hrsChickfilAUFC"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginBottom="16dp"
+                                            android:layout_marginLeft="24dp"
+                                            android:text="10 - 11 PM"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintLeft_toRightOf="@+id/pngChickfilAUFC" />
+
+                                        <ImageView
+                                            android:id="@+id/statusChickfilAUFC"
+                                            android:layout_width="72dp"
+                                            android:layout_height="0dp"
+                                            android:layout_marginBottom="12dp"
+                                            android:layout_marginTop="12dp"
+                                            android:src="@drawable/ic_local_dining_gray_36dp"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintRight_toRightOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent"
+                                            app:layout_constraintVertical_bias="0.0" />
+
+                                    </android.support.constraint.ConstraintLayout>
+
+                                </android.support.v7.widget.CardView>
+
+                                <android.support.v7.widget.CardView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="72dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:layout_marginLeft="8dp"
+                                    android:layout_marginRight="8dp"
+                                    app:cardElevation="1dp">
+
+                                    <android.support.constraint.ConstraintLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent">
+
+                                        <ImageView
+                                            android:id="@+id/pngHoustonSubs"
+                                            android:layout_width="72dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginBottom="8dp"
+                                            android:layout_marginLeft="16dp"
+                                            android:layout_marginStart="16dp"
+                                            android:layout_marginTop="8dp"
+                                            android:src="@drawable/houston_logo"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintLeft_toLeftOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                        <TextView
+                                            android:id="@+id/txtHoustonSubs"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="16dp"
+                                            android:layout_marginTop="16dp"
+                                            android:text="@string/houston_subs"
+                                            android:textColor="@color/colorClosing"
+                                            android:textSize="18sp"
+                                            android:textStyle="bold"
+                                            app:layout_constraintLeft_toRightOf="@+id/pngHoustonSubs"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                        <TextView
+                                            android:id="@+id/hrsHoustonSubs"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginBottom="16dp"
+                                            android:layout_marginLeft="24dp"
+                                            android:text="10 - 11 PM"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintLeft_toRightOf="@+id/pngHoustonSubs" />
+
+                                        <ImageView
+                                            android:id="@+id/statusHoustonSubs"
+                                            android:layout_width="72dp"
+                                            android:layout_height="0dp"
+                                            android:layout_marginBottom="12dp"
+                                            android:layout_marginTop="12dp"
+                                            android:src="@drawable/ic_local_dining_gray_36dp"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintRight_toRightOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent"
+                                            app:layout_constraintVertical_bias="0.0" />
+
+                                    </android.support.constraint.ConstraintLayout>
+
+                                </android.support.v7.widget.CardView>
+
+                                <android.support.v7.widget.CardView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="72dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:layout_marginLeft="8dp"
+                                    android:layout_marginRight="8dp"
+                                    app:cardElevation="1dp">
+
+                                    <android.support.constraint.ConstraintLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent">
+
+                                        <ImageView
+                                            android:id="@+id/pngSmoothieKingUFC"
+                                            android:layout_width="72dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginBottom="8dp"
+                                            android:layout_marginLeft="16dp"
+                                            android:layout_marginStart="16dp"
+                                            android:layout_marginTop="8dp"
+                                            android:paddingBottom="16dp"
+                                            android:paddingTop="8dp"
+                                            android:src="@drawable/smoothie_king_logo"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintLeft_toLeftOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                        <TextView
+                                            android:id="@+id/txtSmoothieKingUFC"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="16dp"
+                                            android:layout_marginTop="16dp"
+                                            android:text="@string/smoothie_king_ufc"
+                                            android:textColor="@color/colorClosing"
+                                            android:textSize="18sp"
+                                            android:textStyle="bold"
+                                            app:layout_constraintLeft_toRightOf="@+id/pngSmoothieKingUFC"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                        <TextView
+                                            android:id="@+id/hrsSmoothieKingUFC"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginBottom="16dp"
+                                            android:layout_marginLeft="24dp"
+                                            android:text="10 - 11 PM"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintLeft_toRightOf="@+id/pngSmoothieKingUFC" />
+
+                                        <ImageView
+                                            android:id="@+id/statusSmoothieKingUFC"
+                                            android:layout_width="72dp"
+                                            android:layout_height="0dp"
+                                            android:layout_marginBottom="12dp"
+                                            android:layout_marginTop="12dp"
+                                            android:src="@drawable/ic_local_dining_gray_36dp"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintRight_toRightOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent"
+                                            app:layout_constraintVertical_bias="0.0" />
+
+                                    </android.support.constraint.ConstraintLayout>
+
+                                </android.support.v7.widget.CardView>
+
+                                <android.support.v7.widget.CardView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="72dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:layout_marginLeft="8dp"
+                                    android:layout_marginRight="8dp"
+                                    app:cardElevation="1dp">
+
+                                    <android.support.constraint.ConstraintLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent">
+
+                                        <ImageView
+                                            android:id="@+id/pngLime"
+                                            android:layout_width="72dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginBottom="8dp"
+                                            android:layout_marginLeft="16dp"
+                                            android:layout_marginStart="16dp"
+                                            android:layout_marginTop="8dp"
+                                            android:src="@drawable/lime_fresh_mexican_grill"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintLeft_toLeftOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                        <TextView
+                                            android:id="@+id/txtLime"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="16dp"
+                                            android:layout_marginTop="16dp"
+                                            android:text="@string/lime"
+                                            android:textColor="@color/colorClosing"
+                                            android:textSize="18sp"
+                                            android:textStyle="bold"
+                                            app:layout_constraintLeft_toRightOf="@+id/pngLime"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                        <TextView
+                                            android:id="@+id/hrsLime"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginBottom="16dp"
+                                            android:layout_marginLeft="24dp"
+                                            android:text="10 - 11 PM"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintLeft_toRightOf="@+id/pngLime" />
+
+                                        <ImageView
+                                            android:id="@+id/statusLime"
+                                            android:layout_width="72dp"
+                                            android:layout_height="0dp"
+                                            android:layout_marginBottom="12dp"
+                                            android:layout_marginTop="12dp"
+                                            android:src="@drawable/ic_local_dining_gray_36dp"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintRight_toRightOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent"
+                                            app:layout_constraintVertical_bias="0.0" />
+
+                                    </android.support.constraint.ConstraintLayout>
+
+                                </android.support.v7.widget.CardView>
+
+                                <android.support.v7.widget.CardView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="72dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:layout_marginLeft="8dp"
+                                    android:layout_marginRight="8dp"
+                                    app:cardElevation="1dp">
+
+                                    <android.support.constraint.ConstraintLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent">
+
+                                        <ImageView
+                                            android:id="@+id/pngSmashburger"
+                                            android:layout_width="72dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginBottom="8dp"
+                                            android:layout_marginLeft="16dp"
+                                            android:layout_marginStart="16dp"
+                                            android:layout_marginTop="8dp"
+                                            android:src="@drawable/smashburger_logo"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintLeft_toLeftOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                        <TextView
+                                            android:id="@+id/txtSmashburger"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="16dp"
+                                            android:layout_marginTop="16dp"
+                                            android:text="@string/smashburger"
+                                            android:textColor="@color/colorClosing"
+                                            android:textSize="18sp"
+                                            android:textStyle="bold"
+                                            app:layout_constraintLeft_toRightOf="@+id/pngSmashburger"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                        <TextView
+                                            android:id="@+id/hrsSmashburger"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginBottom="16dp"
+                                            android:layout_marginLeft="24dp"
+                                            android:text="10 - 11 PM"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintLeft_toRightOf="@+id/pngSmashburger" />
+
+                                        <ImageView
+                                            android:id="@+id/statusSmashburger"
+                                            android:layout_width="72dp"
+                                            android:layout_height="0dp"
+                                            android:layout_marginBottom="12dp"
+                                            android:layout_marginTop="12dp"
+                                            android:src="@drawable/ic_local_dining_gray_36dp"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintRight_toRightOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent"
+                                            app:layout_constraintVertical_bias="0.0" />
+
+                                    </android.support.constraint.ConstraintLayout>
+
+                                </android.support.v7.widget.CardView>
+
+                                <android.support.v7.widget.CardView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="72dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:layout_marginLeft="8dp"
+                                    android:layout_marginRight="8dp"
+                                    app:cardElevation="1dp">
+
+                                    <android.support.constraint.ConstraintLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent">
+
+                                        <ImageView
+                                            android:id="@+id/pngSbisa"
+                                            android:layout_width="72dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginBottom="8dp"
+                                            android:layout_marginLeft="16dp"
+                                            android:layout_marginStart="16dp"
+                                            android:layout_marginTop="8dp"
+                                            android:src="@drawable/sbisafinal"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintLeft_toLeftOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                        <TextView
+                                            android:id="@+id/txtSbisa"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="16dp"
+                                            android:layout_marginTop="16dp"
+                                            android:text="@string/sbisa"
+                                            android:textColor="@color/colorClosing"
+                                            android:textSize="18sp"
+                                            android:textStyle="bold"
+                                            app:layout_constraintLeft_toRightOf="@+id/pngSbisa"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                        <TextView
+                                            android:id="@+id/hrsSbisa"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginBottom="16dp"
+                                            android:layout_marginLeft="24dp"
+                                            android:text="10 - 11 PM"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintLeft_toRightOf="@+id/pngSbisa" />
+
+                                        <ImageView
+                                            android:id="@+id/statusSbisa"
+                                            android:layout_width="72dp"
+                                            android:layout_height="0dp"
+                                            android:layout_marginBottom="12dp"
+                                            android:layout_marginTop="12dp"
+                                            android:src="@drawable/ic_local_dining_gray_36dp"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintRight_toRightOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent"
+                                            app:layout_constraintVertical_bias="0.0" />
+
+                                    </android.support.constraint.ConstraintLayout>
+
+                                </android.support.v7.widget.CardView>
+
+                                <android.support.v7.widget.CardView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="72dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:layout_marginLeft="8dp"
+                                    android:layout_marginRight="8dp"
+                                    app:cardElevation="1dp">
+
+                                    <android.support.constraint.ConstraintLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent">
+
+                                        <ImageView
+                                            android:id="@+id/pngAggieExpressUFC"
+                                            android:layout_width="72dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginBottom="8dp"
+                                            android:layout_marginLeft="16dp"
+                                            android:layout_marginStart="16dp"
+                                            android:layout_marginTop="8dp"
+                                            android:src="@drawable/aggie_express_logo"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintLeft_toLeftOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                        <TextView
+                                            android:id="@+id/txtAggieExpressUFC"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="16dp"
+                                            android:layout_marginTop="16dp"
+                                            android:text="@string/aggie_express_ufc"
+                                            android:textColor="@color/colorClosing"
+                                            android:textSize="18sp"
+                                            android:textStyle="bold"
+                                            app:layout_constraintLeft_toRightOf="@+id/pngAggieExpressUFC"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                        <TextView
+                                            android:id="@+id/hrsAggieExpressUFC"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginBottom="16dp"
+                                            android:layout_marginLeft="24dp"
+                                            android:text="10 - 11 PM"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintLeft_toRightOf="@+id/pngAggieExpressUFC" />
+
+                                        <ImageView
+                                            android:id="@+id/statusAggieExpressUFC"
+                                            android:layout_width="72dp"
+                                            android:layout_height="0dp"
+                                            android:layout_marginBottom="12dp"
+                                            android:layout_marginTop="12dp"
+                                            android:src="@drawable/ic_local_dining_gray_36dp"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintRight_toRightOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent"
+                                            app:layout_constraintVertical_bias="0.0" />
+
+                                    </android.support.constraint.ConstraintLayout>
+
+                                </android.support.v7.widget.CardView>
+
+                                <android.support.v7.widget.CardView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="72dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:layout_marginLeft="8dp"
+                                    android:layout_marginRight="8dp"
+                                    app:cardElevation="1dp">
+
+                                    <android.support.constraint.ConstraintLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent">
+
+                                        <ImageView
+                                            android:id="@+id/pngAggieExpressHullabaloo"
+                                            android:layout_width="72dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginBottom="8dp"
+                                            android:layout_marginLeft="16dp"
+                                            android:layout_marginStart="16dp"
+                                            android:layout_marginTop="8dp"
+                                            android:src="@drawable/aggie_express_logo"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintLeft_toLeftOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                        <TextView
+                                            android:id="@+id/txtAggieExpressHullabaloo"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="16dp"
+                                            android:layout_marginTop="16dp"
+                                            android:text="@string/aggie_express_hullabaloo"
+                                            android:textColor="@color/colorClosing"
+                                            android:textSize="18sp"
+                                            android:textStyle="bold"
+                                            app:layout_constraintLeft_toRightOf="@+id/pngAggieExpressHullabaloo"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                        <TextView
+                                            android:id="@+id/hrsAggieExpressHullabaloo"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginBottom="16dp"
+                                            android:layout_marginLeft="24dp"
+                                            android:text="10 - 11 PM"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintLeft_toRightOf="@+id/pngAggieExpressHullabaloo" />
+
+                                        <ImageView
+                                            android:id="@+id/statusAggieExpressHullabaloo"
+                                            android:layout_width="72dp"
+                                            android:layout_height="0dp"
+                                            android:layout_marginBottom="12dp"
+                                            android:layout_marginTop="12dp"
+                                            android:src="@drawable/ic_local_dining_gray_36dp"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintRight_toRightOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent"
+                                            app:layout_constraintVertical_bias="0.0" />
+
+                                    </android.support.constraint.ConstraintLayout>
+
+                                </android.support.v7.widget.CardView>
+
+                                <android.support.v7.widget.CardView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="72dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:layout_marginLeft="8dp"
+                                    android:layout_marginRight="8dp"
+                                    app:cardElevation="1dp">
+
+                                    <android.support.constraint.ConstraintLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent">
+
+                                        <ImageView
+                                            android:id="@+id/pngOuttakes"
+                                            android:layout_width="72dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginBottom="8dp"
+                                            android:layout_marginLeft="16dp"
+                                            android:layout_marginStart="16dp"
+                                            android:layout_marginTop="8dp"
+                                            android:paddingBottom="16dp"
+                                            android:paddingTop="16dp"
+                                            android:scaleType="fitXY"
+                                            android:src="@drawable/on_the_go"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintLeft_toLeftOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                        <TextView
+                                            android:id="@+id/txtOuttakes"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="16dp"
+                                            android:layout_marginTop="16dp"
+                                            android:text="@string/outtakes"
+                                            android:textColor="@color/colorClosing"
+                                            android:textSize="18sp"
+                                            android:textStyle="bold"
+                                            app:layout_constraintLeft_toRightOf="@+id/pngOuttakes"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                        <TextView
+                                            android:id="@+id/hrsOuttakes"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginBottom="16dp"
+                                            android:layout_marginLeft="24dp"
+                                            android:text="10 - 11 PM"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintLeft_toRightOf="@+id/pngOuttakes" />
+
+                                        <ImageView
+                                            android:id="@+id/statusOuttakes"
+                                            android:layout_width="72dp"
+                                            android:layout_height="0dp"
+                                            android:layout_marginBottom="12dp"
+                                            android:layout_marginTop="12dp"
+                                            android:src="@drawable/ic_local_dining_gray_36dp"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintRight_toRightOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent"
+                                            app:layout_constraintVertical_bias="0.0" />
+
+                                    </android.support.constraint.ConstraintLayout>
+
+                                </android.support.v7.widget.CardView>
+
+                                <android.support.v7.widget.CardView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="72dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:layout_marginLeft="8dp"
+                                    android:layout_marginRight="8dp"
+                                    app:cardElevation="1dp">
+
+                                    <android.support.constraint.ConstraintLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent">
+
+                                        <ImageView
+                                            android:id="@+id/pngAzimuth"
+                                            android:layout_width="72dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginBottom="8dp"
+                                            android:layout_marginLeft="16dp"
+                                            android:layout_marginStart="16dp"
+                                            android:layout_marginTop="8dp"
+                                            android:src="@drawable/azimuth_logo"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintLeft_toLeftOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                        <TextView
+                                            android:id="@+id/txtAzimuth"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="16dp"
+                                            android:layout_marginTop="16dp"
+                                            android:text="@string/azimuth"
+                                            android:textColor="@color/colorClosing"
+                                            android:textSize="18sp"
+                                            android:textStyle="bold"
+                                            app:layout_constraintLeft_toRightOf="@+id/pngAzimuth"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                        <TextView
+                                            android:id="@+id/hrsAzimuth"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginBottom="16dp"
+                                            android:layout_marginLeft="24dp"
+                                            android:text="10 - 11 PM"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintLeft_toRightOf="@+id/pngAzimuth" />
+
+                                        <ImageView
+                                            android:id="@+id/statusAzimuth"
+                                            android:layout_width="72dp"
+                                            android:layout_height="0dp"
+                                            android:layout_marginBottom="12dp"
+                                            android:layout_marginTop="12dp"
+                                            android:src="@drawable/ic_local_dining_gray_36dp"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintRight_toRightOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent"
+                                            app:layout_constraintVertical_bias="0.0" />
+
+                                    </android.support.constraint.ConstraintLayout>
+
+                                </android.support.v7.widget.CardView>
+
+                                <android.support.v7.widget.CardView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="72dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:layout_marginLeft="8dp"
+                                    android:layout_marginRight="8dp"
+                                    app:cardElevation="1dp">
+
+                                    <android.support.constraint.ConstraintLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent">
+
+                                        <ImageView
+                                            android:id="@+id/pngEinsteins"
+                                            android:layout_width="72dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginBottom="8dp"
+                                            android:layout_marginLeft="16dp"
+                                            android:layout_marginStart="16dp"
+                                            android:layout_marginTop="8dp"
+                                            android:paddingBottom="8dp"
+                                            android:paddingTop="8dp"
+                                            android:src="@drawable/einstein_bros"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintLeft_toLeftOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                        <TextView
+                                            android:id="@+id/txtEinsteins"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="16dp"
+                                            android:layout_marginTop="16dp"
+                                            android:text="@string/einsteins"
+                                            android:textColor="@color/colorClosing"
+                                            android:textSize="18sp"
+                                            android:textStyle="bold"
+                                            app:layout_constraintLeft_toRightOf="@+id/pngEinsteins"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                        <TextView
+                                            android:id="@+id/hrsEinsteins"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginBottom="16dp"
+                                            android:layout_marginLeft="24dp"
+                                            android:text="10 - 11 PM"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintLeft_toRightOf="@+id/pngEinsteins" />
+
+                                        <ImageView
+                                            android:id="@+id/statusEinsteins"
+                                            android:layout_width="72dp"
+                                            android:layout_height="0dp"
+                                            android:layout_marginBottom="12dp"
+                                            android:layout_marginTop="12dp"
+                                            android:src="@drawable/ic_local_dining_gray_36dp"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintRight_toRightOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent"
+                                            app:layout_constraintVertical_bias="0.0" />
+
+                                    </android.support.constraint.ConstraintLayout>
+
+                                </android.support.v7.widget.CardView>
+
+                                <android.support.v7.widget.CardView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="72dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:layout_marginLeft="8dp"
+                                    android:layout_marginRight="8dp"
+                                    app:cardElevation="1dp">
+
+                                    <android.support.constraint.ConstraintLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent">
+
+                                        <ImageView
+                                            android:id="@+id/pngStarbucksHullabaloo"
+                                            android:layout_width="72dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginBottom="8dp"
+                                            android:layout_marginLeft="16dp"
+                                            android:layout_marginStart="16dp"
+                                            android:layout_marginTop="8dp"
+                                            android:paddingBottom="10dp"
+                                            android:paddingTop="10dp"
+                                            android:src="@drawable/starbucks"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintLeft_toLeftOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                        <TextView
+                                            android:id="@+id/txtStarbucksHullabaloo"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="16dp"
+                                            android:layout_marginTop="16dp"
+                                            android:text="@string/starbucks_hullabaloo"
+                                            android:textColor="@color/colorClosing"
+                                            android:textSize="18sp"
+                                            android:textStyle="bold"
+                                            app:layout_constraintLeft_toRightOf="@+id/pngStarbucksHullabaloo"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                        <TextView
+                                            android:id="@+id/hrsStarbucksHullabaloo"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginBottom="16dp"
+                                            android:layout_marginLeft="24dp"
+                                            android:text="10 - 11 PM"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintLeft_toRightOf="@+id/pngStarbucksHullabaloo" />
+
+                                        <ImageView
+                                            android:id="@+id/statusStarbucksHullabaloo"
+                                            android:layout_width="72dp"
+                                            android:layout_height="0dp"
+                                            android:layout_marginBottom="12dp"
+                                            android:layout_marginTop="12dp"
+                                            android:src="@drawable/ic_local_dining_gray_36dp"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintRight_toRightOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent"
+                                            app:layout_constraintVertical_bias="0.0" />
+
+                                    </android.support.constraint.ConstraintLayout>
+
+                                </android.support.v7.widget.CardView>
+
+                            </LinearLayout>
+                        </ScrollView>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/South"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <ScrollView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            app:layout_constraintTop_toBottomOf="@+id/seekBar6"
+                            tools:layout_editor_absoluteX="16dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@color/colorOffWhite"
+                                android:orientation="vertical"
+                                tools:layout_editor_absoluteX="16dp"
+                                tools:layout_editor_absoluteY="149dp">
+
+                                <android.support.v7.widget.CardView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="72dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:layout_marginLeft="8dp"
+                                    android:layout_marginRight="8dp"
+                                    android:layout_marginTop="8dp"
+                                    app:cardElevation="1dp">
+
+                                    <android.support.constraint.ConstraintLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent">
+
+                                        <ImageView
+                                            android:id="@+id/pngCommons"
+                                            android:layout_width="72dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginBottom="8dp"
+                                            android:layout_marginLeft="16dp"
+                                            android:layout_marginStart="16dp"
+                                            android:layout_marginTop="8dp"
+                                            android:src="@drawable/thecommons"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintLeft_toLeftOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                        <TextView
+                                            android:id="@+id/txtCommons"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="8dp"
+                                            android:layout_marginStart="16dp"
+                                            android:layout_marginTop="16dp"
+                                            android:text="@string/commons"
+                                            android:textAllCaps="false"
+                                            android:textColor="@color/colorClosing"
+                                            android:textSize="18sp"
+                                            android:textStyle="bold"
+                                            app:layout_constraintLeft_toRightOf="@+id/pngCommons"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                        <TextView
+                                            android:id="@+id/hrsCommons"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginBottom="16dp"
+                                            android:layout_marginLeft="24dp"
+                                            android:text="10 - 11 PM"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintLeft_toRightOf="@+id/pngCommons" />
+
+                                        <ImageView
+                                            android:id="@+id/statusCommons"
+                                            android:layout_width="72dp"
+                                            android:layout_height="0dp"
+                                            android:layout_marginBottom="12dp"
+                                            android:layout_marginTop="12dp"
+                                            android:src="@drawable/ic_local_dining_gray_36dp"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintRight_toRightOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent"
+                                            app:layout_constraintVertical_bias="0.0" />
+
+                                    </android.support.constraint.ConstraintLayout>
+
+                                </android.support.v7.widget.CardView>
+
+
+
+                                <android.support.v7.widget.CardView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="72dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:layout_marginLeft="8dp"
+                                    android:layout_marginRight="8dp"
+                                    app:cardElevation="1dp">
+
+                                    <android.support.constraint.ConstraintLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent">
+
+                                        <ImageView
+                                            android:id="@+id/pngSouthsideMarket"
+                                            android:layout_width="72dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginBottom="8dp"
+                                            android:layout_marginLeft="16dp"
+                                            android:layout_marginStart="16dp"
+                                            android:layout_marginTop="8dp"
+                                            android:src="@drawable/southsidemkt"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintLeft_toLeftOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                        <TextView
+                                            android:id="@+id/txtSouthsideMarket"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="16dp"
+                                            android:layout_marginStart="16dp"
+                                            android:layout_marginTop="16dp"
+                                            android:text="@string/southside_market"
+                                            android:textAllCaps="false"
+                                            android:textColor="@color/colorClosing"
+                                            android:textSize="18sp"
+                                            android:textStyle="bold"
+                                            app:layout_constraintLeft_toRightOf="@+id/pngSouthsideMarket"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                        <TextView
+                                            android:id="@+id/hrsSouthsideMarket"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginBottom="16dp"
+                                            android:layout_marginLeft="24dp"
+                                            android:text="10 - 11 PM"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintLeft_toRightOf="@+id/pngSouthsideMarket" />
+
+                                        <ImageView
+                                            android:id="@+id/statusSouthsideMarket"
+                                            android:layout_width="72dp"
+                                            android:layout_height="0dp"
+                                            android:layout_marginBottom="12dp"
+                                            android:layout_marginTop="12dp"
+                                            android:src="@drawable/ic_local_dining_gray_36dp"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintRight_toRightOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent"
+                                            app:layout_constraintVertical_bias="0.0" />
+
+                                    </android.support.constraint.ConstraintLayout>
+
+                                </android.support.v7.widget.CardView>
+
+                                <android.support.v7.widget.CardView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="72dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:layout_marginLeft="8dp"
+                                    android:layout_marginRight="8dp"
+                                    app:cardElevation="1dp">
+
+                                    <android.support.constraint.ConstraintLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent">
+
+                                        <ImageView
+                                            android:id="@+id/pngDuncan"
+                                            android:layout_width="72dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginBottom="8dp"
+                                            android:layout_marginLeft="16dp"
+                                            android:layout_marginStart="16dp"
+                                            android:layout_marginTop="8dp"
+                                            android:src="@drawable/duncan_logo"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintLeft_toLeftOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                        <TextView
+                                            android:id="@+id/txtDuncan"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="16dp"
+                                            android:layout_marginStart="16dp"
+                                            android:layout_marginTop="16dp"
+                                            android:text="@string/duncan"
+                                            android:textAllCaps="false"
+                                            android:textColor="@color/colorClosing"
+                                            android:textSize="18sp"
+                                            android:textStyle="bold"
+                                            app:layout_constraintLeft_toRightOf="@+id/pngDuncan"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                        <TextView
+                                            android:id="@+id/hrsDuncan"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginBottom="16dp"
+                                            android:layout_marginLeft="24dp"
+                                            android:text="10 - 11 PM"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintLeft_toRightOf="@+id/pngDuncan" />
+
+                                        <ImageView
+                                            android:id="@+id/statusDuncan"
+                                            android:layout_width="72dp"
+                                            android:layout_height="0dp"
+                                            android:layout_marginBottom="12dp"
+                                            android:layout_marginTop="12dp"
+                                            android:src="@drawable/ic_local_dining_gray_36dp"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintRight_toRightOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent"
+                                            app:layout_constraintVertical_bias="0.0" />
+
+                                    </android.support.constraint.ConstraintLayout>
+
+                                </android.support.v7.widget.CardView>
+
+                                <android.support.v7.widget.CardView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="72dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:layout_marginLeft="8dp"
+                                    android:layout_marginRight="8dp"
+                                    app:cardElevation="1dp">
+
+                                    <android.support.constraint.ConstraintLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent">
+
+                                        <ImageView
+                                            android:id="@+id/pngStarbucksCorps"
+                                            android:layout_width="72dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginBottom="8dp"
+                                            android:layout_marginLeft="16dp"
+                                            android:layout_marginStart="16dp"
+                                            android:layout_marginTop="8dp"
+                                            android:paddingBottom="10dp"
+                                            android:paddingTop="10dp"
+                                            android:src="@drawable/starbucks"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintLeft_toLeftOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                        <TextView
+                                            android:id="@+id/txtStarbucksCorps"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="16dp"
+                                            android:layout_marginStart="16dp"
+                                            android:layout_marginTop="16dp"
+                                            android:text="@string/starbucks_corps"
+                                            android:textAllCaps="false"
+                                            android:textColor="@color/colorClosing"
+                                            android:textSize="18sp"
+                                            android:textStyle="bold"
+                                            app:layout_constraintLeft_toRightOf="@+id/pngStarbucksCorps"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                        <TextView
+                                            android:id="@+id/hrsStarbucksCorps"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginBottom="16dp"
+                                            android:layout_marginLeft="24dp"
+                                            android:text="11 - 6 PM"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintLeft_toRightOf="@+id/pngStarbucksCorps" />
+
+                                        <ImageView
+                                            android:id="@+id/statusStarbucksCorps"
+                                            android:layout_width="72dp"
+                                            android:layout_height="0dp"
+                                            android:layout_marginBottom="12dp"
+                                            android:layout_marginTop="12dp"
+                                            android:src="@drawable/ic_local_dining_gray_36dp"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintRight_toRightOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                    </android.support.constraint.ConstraintLayout>
+                                </android.support.v7.widget.CardView>
+
+                                <android.support.v7.widget.CardView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="72dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:layout_marginLeft="8dp"
+                                    android:layout_marginRight="8dp"
+                                    app:cardElevation="1dp">
+
+                                    <android.support.constraint.ConstraintLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent">
+
+                                        <ImageView
+                                            android:id="@+id/pngAggieExpressCommons"
+                                            android:layout_width="72dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginBottom="8dp"
+                                            android:layout_marginLeft="16dp"
+                                            android:layout_marginTop="8dp"
+                                            android:src="@drawable/aggie_express_logo"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintLeft_toLeftOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                        <TextView
+                                            android:id="@+id/txtAggieExpressCommons"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="16dp"
+                                            android:layout_marginTop="16dp"
+                                            android:text="@string/aggie_express_commons"
+                                            android:textColor="@color/colorClosing"
+                                            android:textSize="18sp"
+                                            android:textStyle="bold"
+                                            app:layout_constraintLeft_toRightOf="@+id/pngAggieExpressCommons"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                        <TextView
+                                            android:id="@+id/hrsAggieExpressCommons"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginBottom="16dp"
+                                            android:layout_marginLeft="24dp"
+                                            android:text="11 - 6 PM"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintLeft_toRightOf="@+id/pngAggieExpressCommons" />
+
+                                        <ImageView
+                                            android:id="@+id/statusAggieExpressCommons"
+                                            android:layout_width="72dp"
+                                            android:layout_height="0dp"
+                                            android:layout_marginBottom="12dp"
+                                            android:layout_marginTop="12dp"
+                                            android:src="@drawable/ic_local_dining_gray_36dp"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintRight_toRightOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+                                    </android.support.constraint.ConstraintLayout>
+
+                                </android.support.v7.widget.CardView>
+
+                                <android.support.v7.widget.CardView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="72dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:layout_marginLeft="8dp"
+                                    android:layout_marginRight="8dp"
+                                    app:cardElevation="1dp">
+
+                                    <android.support.constraint.ConstraintLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent">
+
+                                        <ImageView
+                                            android:id="@+id/pngGrill"
+                                            android:layout_width="72dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginBottom="8dp"
+                                            android:layout_marginLeft="16dp"
+                                            android:layout_marginStart="16dp"
+                                            android:layout_marginTop="8dp"
+                                            android:paddingBottom="8dp"
+                                            android:paddingTop="8dp"
+                                            android:src="@drawable/grill_logo"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintLeft_toLeftOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                        <TextView
+                                            android:id="@+id/txtGrill"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="16dp"
+                                            android:layout_marginStart="16dp"
+                                            android:layout_marginTop="16dp"
+                                            android:text="@string/grill"
+                                            android:textColor="@color/colorClosing"
+                                            android:textSize="18sp"
+                                            android:textStyle="bold"
+                                            app:layout_constraintLeft_toRightOf="@+id/pngGrill"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                        <TextView
+                                            android:id="@+id/hrsGrill"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginBottom="16dp"
+                                            android:layout_marginLeft="24dp"
+                                            android:text="11 - 6 PM"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintLeft_toRightOf="@+id/pngGrill" />
+
+                                        <ImageView
+                                            android:id="@+id/statusGrill"
+                                            android:layout_width="72dp"
+                                            android:layout_height="0dp"
+                                            android:layout_marginBottom="12dp"
+                                            android:layout_marginTop="12dp"
+                                            android:src="@drawable/ic_local_dining_gray_36dp"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintRight_toRightOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+                                    </android.support.constraint.ConstraintLayout>
+
+                                </android.support.v7.widget.CardView>
+
+                                <android.support.v7.widget.CardView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="72dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:layout_marginLeft="8dp"
+                                    android:layout_marginRight="8dp"
+                                    app:cardElevation="1dp">
+
+                                    <android.support.constraint.ConstraintLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent">
+
+                                        <ImageView
+                                            android:id="@+id/pngStarbucksEvans"
+                                            android:layout_width="72dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginBottom="8dp"
+                                            android:layout_marginLeft="16dp"
+                                            android:layout_marginStart="16dp"
+                                            android:layout_marginTop="8dp"
+                                            android:paddingBottom="10dp"
+                                            android:paddingTop="10dp"
+                                            android:src="@drawable/starbucks"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintLeft_toLeftOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                        <TextView
+                                            android:id="@+id/txtStarbucksEvans"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="16dp"
+                                            android:layout_marginStart="16dp"
+                                            android:layout_marginTop="16dp"
+                                            android:text="@string/starbucks_evans"
+                                            android:textColor="@color/colorClosing"
+                                            android:textSize="18sp"
+                                            android:textStyle="bold"
+                                            app:layout_constraintLeft_toRightOf="@+id/pngStarbucksEvans"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                        <TextView
+                                            android:id="@+id/hrsStarbucksEvans"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginBottom="16dp"
+                                            android:layout_marginLeft="24dp"
+                                            android:text="11 - 6 PM"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintLeft_toRightOf="@+id/pngStarbucksEvans" />
+
+                                        <ImageView
+                                            android:id="@+id/statusStarbucksEvans"
+                                            android:layout_width="72dp"
+                                            android:layout_height="0dp"
+                                            android:layout_marginBottom="12dp"
+                                            android:layout_marginTop="12dp"
+                                            android:src="@drawable/ic_local_dining_gray_36dp"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintRight_toRightOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+                                    </android.support.constraint.ConstraintLayout>
+
+                                </android.support.v7.widget.CardView>
+
+                                <android.support.v7.widget.CardView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="72dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:layout_marginLeft="8dp"
+                                    android:layout_marginRight="8dp"
+                                    app:cardElevation="1dp">
+
+                                    <android.support.constraint.ConstraintLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent">
+
+                                        <ImageView
+                                            android:id="@+id/pngWhiteCreek"
+                                            android:layout_width="72dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginBottom="8dp"
+                                            android:layout_marginLeft="16dp"
+                                            android:layout_marginTop="8dp"
+                                            android:src="@drawable/food_truck"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintLeft_toLeftOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                        <TextView
+                                            android:id="@+id/txtWhiteCreek"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginStart="16dp"
+                                            android:layout_marginTop="16dp"
+                                            android:text="@string/white_creek"
+                                            android:textAllCaps="false"
+                                            android:textColor="@color/colorClosing"
+                                            android:textSize="18sp"
+                                            android:textStyle="bold"
+                                            app:layout_constraintStart_toEndOf="@+id/pngWhiteCreek"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                        <TextView
+                                            android:id="@+id/hrsWhiteCreek"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginBottom="16dp"
+                                            android:layout_marginStart="24dp"
+                                            android:text="10 - 11 PM"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintStart_toEndOf="@+id/pngWhiteCreek" />
+
+                                        <ImageView
+                                            android:id="@+id/statusWhiteCreek"
+                                            android:layout_width="72dp"
+                                            android:layout_height="0dp"
+                                            android:layout_marginBottom="12dp"
+                                            android:layout_marginTop="12dp"
+                                            android:src="@drawable/ic_local_dining_gray_36dp"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintRight_toRightOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent"
+                                            app:layout_constraintVertical_bias="0.0" />
+
+                                    </android.support.constraint.ConstraintLayout>
+
+                                </android.support.v7.widget.CardView>
+
+                            </LinearLayout>
+                        </ScrollView>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/West"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <ScrollView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            app:layout_constraintTop_toBottomOf="@+id/seekBar6"
+                            tools:layout_editor_absoluteX="16dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@color/colorOffWhite"
+                                android:orientation="vertical"
+                                tools:layout_editor_absoluteX="16dp"
+                                tools:layout_editor_absoluteY="149dp">
+
+                                <android.support.v7.widget.CardView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="72dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:layout_marginLeft="8dp"
+                                    android:layout_marginRight="8dp"
+                                    android:layout_marginTop="8dp"
+                                    app:cardElevation="1dp">
+
+                                    <android.support.constraint.ConstraintLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent">
+
+                                        <ImageView
+                                            android:id="@+id/pngWhichWich"
+                                            android:layout_width="72dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginBottom="8dp"
+                                            android:layout_marginLeft="16dp"
+                                            android:layout_marginStart="16dp"
+                                            android:layout_marginTop="8dp"
+                                            android:src="@drawable/which_wich"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintLeft_toLeftOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                        <TextView
+                                            android:id="@+id/txtWhichWich"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="16dp"
+                                            android:layout_marginTop="16dp"
+                                            android:text="@string/which_wich"
+                                            android:textColor="@color/colorClosing"
+                                            android:textSize="18sp"
+                                            android:textStyle="bold"
+                                            app:layout_constraintLeft_toRightOf="@+id/pngWhichWich"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                        <TextView
+                                            android:id="@+id/hrsWhichWich"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginBottom="16dp"
+                                            android:layout_marginLeft="24dp"
+                                            android:text="10 - 11 PM"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintLeft_toRightOf="@+id/pngWhichWich" />
+
+                                        <ImageView
+                                            android:id="@+id/statusWhichWich"
+                                            android:layout_width="72dp"
+                                            android:layout_height="0dp"
+                                            android:layout_marginBottom="12dp"
+                                            android:layout_marginTop="12dp"
+                                            android:src="@drawable/ic_local_dining_gray_36dp"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintRight_toRightOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent"
+                                            app:layout_constraintVertical_bias="0.0" />
+
+                                    </android.support.constraint.ConstraintLayout>
+
+                                </android.support.v7.widget.CardView>
+
+                                <android.support.v7.widget.CardView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="72dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:layout_marginLeft="8dp"
+                                    android:layout_marginRight="8dp"
+                                    app:cardElevation="1dp">
+
+                                    <android.support.constraint.ConstraintLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent">
+
+                                        <ImageView
+                                            android:id="@+id/pngChickfilaAgcafe"
+                                            android:layout_width="72dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginBottom="8dp"
+                                            android:layout_marginLeft="16dp"
+                                            android:layout_marginStart="16dp"
+                                            android:layout_marginTop="8dp"
+                                            android:src="@drawable/chick_fil_a"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintLeft_toLeftOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                        <TextView
+                                            android:id="@+id/txtChickfilaAgcafe"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="16dp"
+                                            android:layout_marginTop="16dp"
+                                            android:text="@string/chickfila_agcafe"
+                                            android:textColor="@color/colorClosing"
+                                            android:textSize="18sp"
+                                            android:textStyle="bold"
+                                            app:layout_constraintLeft_toRightOf="@+id/pngChickfilaAgcafe"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                        <TextView
+                                            android:id="@+id/hrsChickfilaAgcafe"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginBottom="16dp"
+                                            android:layout_marginLeft="24dp"
+                                            android:text="10 - 11 PM"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintLeft_toRightOf="@+id/pngChickfilaAgcafe" />
+
+                                        <ImageView
+                                            android:id="@+id/statusChickfilaAgcafe"
+                                            android:layout_width="72dp"
+                                            android:layout_height="0dp"
+                                            android:layout_marginBottom="12dp"
+                                            android:layout_marginTop="12dp"
+                                            android:src="@drawable/ic_local_dining_gray_36dp"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintRight_toRightOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent"
+                                            app:layout_constraintVertical_bias="0.0" />
+
+                                    </android.support.constraint.ConstraintLayout>
+
+                                </android.support.v7.widget.CardView>
+
+                                <android.support.v7.widget.CardView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="72dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:layout_marginLeft="8dp"
+                                    android:layout_marginRight="8dp"
+                                    app:cardElevation="1dp">
+
+                                    <android.support.constraint.ConstraintLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent">
+
+                                        <ImageView
+                                            android:id="@+id/pngRevsExpress"
+                                            android:layout_width="72dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginBottom="8dp"
+                                            android:layout_marginLeft="16dp"
+                                            android:layout_marginStart="16dp"
+                                            android:layout_marginTop="8dp"
+                                            android:src="@drawable/revs"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintLeft_toLeftOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                        <TextView
+                                            android:id="@+id/txtRevsExpress"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="16dp"
+                                            android:layout_marginTop="16dp"
+                                            android:text="@string/revs_express"
+                                            android:textColor="@color/colorClosing"
+                                            android:textSize="18sp"
+                                            android:textStyle="bold"
+                                            app:layout_constraintLeft_toRightOf="@+id/pngRevsExpress"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                        <TextView
+                                            android:id="@+id/hrsRevsExpress"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginBottom="16dp"
+                                            android:layout_marginLeft="24dp"
+                                            android:text="10 - 11 PM"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintLeft_toRightOf="@+id/pngRevsExpress" />
+
+                                        <ImageView
+                                            android:id="@+id/statusRevsExpress"
+                                            android:layout_width="72dp"
+                                            android:layout_height="0dp"
+                                            android:layout_marginBottom="12dp"
+                                            android:layout_marginTop="12dp"
+                                            android:src="@drawable/ic_local_dining_gray_36dp"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintRight_toRightOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent"
+                                            app:layout_constraintVertical_bias="0.0" />
+
+                                    </android.support.constraint.ConstraintLayout>
+
+                                </android.support.v7.widget.CardView>
+
+                                <android.support.v7.widget.CardView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="72dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:layout_marginLeft="8dp"
+                                    android:layout_marginRight="8dp"
+                                    app:cardElevation="1dp">
+
+                                    <android.support.constraint.ConstraintLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent">
+
+                                        <ImageView
+                                            android:id="@+id/png41stClub"
+                                            android:layout_width="72dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginBottom="8dp"
+                                            android:layout_marginLeft="16dp"
+                                            android:layout_marginStart="16dp"
+                                            android:layout_marginTop="8dp"
+                                            android:src="@drawable/stclub"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintLeft_toLeftOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                        <TextView
+                                            android:id="@+id/txt41stClub"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="16dp"
+                                            android:layout_marginTop="16dp"
+                                            android:text="@string/st_club"
+                                            android:textColor="@color/colorClosing"
+                                            android:textSize="18sp"
+                                            android:textStyle="bold"
+                                            app:layout_constraintLeft_toRightOf="@+id/png41stClub"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                        <TextView
+                                            android:id="@+id/hrs41stClub"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginBottom="16dp"
+                                            android:layout_marginLeft="24dp"
+                                            android:text="10 - 11 PM"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintLeft_toRightOf="@+id/png41stClub" />
+
+                                        <ImageView
+                                            android:id="@+id/status41stClub"
+                                            android:layout_width="72dp"
+                                            android:layout_height="0dp"
+                                            android:layout_marginBottom="12dp"
+                                            android:layout_marginTop="12dp"
+                                            android:src="@drawable/ic_local_dining_gray_36dp"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintRight_toRightOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent"
+                                            app:layout_constraintVertical_bias="0.0" />
+
+                                    </android.support.constraint.ConstraintLayout>
+
+                                </android.support.v7.widget.CardView>
+
+                                <android.support.v7.widget.CardView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="72dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:layout_marginLeft="8dp"
+                                    android:layout_marginRight="8dp"
+                                    app:cardElevation="1dp">
+
+                                    <android.support.constraint.ConstraintLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent">
+
+                                        <ImageView
+                                            android:id="@+id/pngWestsideExchange"
+                                            android:layout_width="72dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginBottom="8dp"
+                                            android:layout_marginLeft="16dp"
+                                            android:layout_marginStart="16dp"
+                                            android:layout_marginTop="8dp"
+                                            android:src="@drawable/westside_exchange"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintLeft_toLeftOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                        <TextView
+                                            android:id="@+id/txtWestsideExchange"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="16dp"
+                                            android:layout_marginTop="16dp"
+                                            android:text="@string/westside_exchange"
+                                            android:textColor="@color/colorClosing"
+                                            android:textSize="18sp"
+                                            android:textStyle="bold"
+                                            app:layout_constraintLeft_toRightOf="@+id/pngWestsideExchange"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                        <TextView
+                                            android:id="@+id/hrsWestsideExchange"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginBottom="16dp"
+                                            android:layout_marginLeft="24dp"
+                                            android:text="10 - 11 PM"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintLeft_toRightOf="@+id/pngWestsideExchange" />
+
+                                        <ImageView
+                                            android:id="@+id/statusWestsideExchange"
+                                            android:layout_width="72dp"
+                                            android:layout_height="0dp"
+                                            android:layout_marginBottom="12dp"
+                                            android:layout_marginTop="12dp"
+                                            android:src="@drawable/ic_local_dining_gray_36dp"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintRight_toRightOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent"
+                                            app:layout_constraintVertical_bias="0.0" />
+
+                                    </android.support.constraint.ConstraintLayout>
+
+                                </android.support.v7.widget.CardView>
+
+                                <android.support.v7.widget.CardView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="72dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:layout_marginLeft="8dp"
+                                    android:layout_marginRight="8dp"
+                                    app:cardElevation="1dp">
+
+                                    <android.support.constraint.ConstraintLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent">
+
+                                        <ImageView
+                                            android:id="@+id/pngSmoothieKingRec"
+                                            android:layout_width="72dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginBottom="8dp"
+                                            android:layout_marginLeft="16dp"
+                                            android:layout_marginStart="16dp"
+                                            android:layout_marginTop="8dp"
+                                            android:paddingBottom="16dp"
+                                            android:paddingTop="8dp"
+                                            android:src="@drawable/smoothie_king_logo"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintLeft_toLeftOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                        <TextView
+                                            android:id="@+id/txtSmoothieKingRec"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="16dp"
+                                            android:layout_marginTop="16dp"
+                                            android:text="@string/smoothie_king_rec"
+                                            android:textColor="@color/colorClosing"
+                                            android:textSize="18sp"
+                                            android:textStyle="bold"
+                                            app:layout_constraintLeft_toRightOf="@+id/pngSmoothieKingRec"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                        <TextView
+                                            android:id="@+id/hrsSmoothieKingRec"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginBottom="16dp"
+                                            android:layout_marginLeft="24dp"
+                                            android:text="10 - 11 PM"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintLeft_toRightOf="@+id/pngSmoothieKingRec" />
+
+                                        <ImageView
+                                            android:id="@+id/statusSmoothieKingRec"
+                                            android:layout_width="72dp"
+                                            android:layout_height="0dp"
+                                            android:layout_marginBottom="12dp"
+                                            android:layout_marginTop="12dp"
+                                            android:src="@drawable/ic_local_dining_gray_36dp"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintRight_toRightOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent"
+                                            app:layout_constraintVertical_bias="0.0" />
+
+                                    </android.support.constraint.ConstraintLayout>
+
+                                </android.support.v7.widget.CardView>
+
+                                <android.support.v7.widget.CardView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="72dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:layout_marginLeft="8dp"
+                                    android:layout_marginRight="8dp"
+                                    app:cardElevation="1dp">
+
+                                    <android.support.constraint.ConstraintLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent">
+
+                                        <ImageView
+                                            android:id="@+id/pngVetMed"
+                                            android:layout_width="72dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginBottom="8dp"
+                                            android:layout_marginLeft="16dp"
+                                            android:layout_marginStart="16dp"
+                                            android:layout_marginTop="8dp"
+                                            android:paddingBottom="4dp"
+                                            android:paddingTop="4dp"
+                                            android:src="@drawable/vet_med"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintLeft_toLeftOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                        <TextView
+                                            android:id="@+id/txtVetMed"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="16dp"
+                                            android:layout_marginTop="16dp"
+                                            android:text="@string/vet_med"
+                                            android:textColor="@color/colorClosing"
+                                            android:textSize="18sp"
+                                            android:textStyle="bold"
+                                            app:layout_constraintLeft_toRightOf="@+id/pngVetMed"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                        <TextView
+                                            android:id="@+id/hrsVetMed"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginBottom="16dp"
+                                            android:layout_marginLeft="24dp"
+                                            android:text="10 - 11 PM"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintLeft_toRightOf="@+id/pngVetMed" />
+
+                                        <ImageView
+                                            android:id="@+id/statusVetMed"
+                                            android:layout_width="72dp"
+                                            android:layout_height="0dp"
+                                            android:layout_marginBottom="12dp"
+                                            android:layout_marginTop="12dp"
+                                            android:src="@drawable/ic_local_dining_gray_36dp"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintRight_toRightOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent"
+                                            app:layout_constraintVertical_bias="0.0" />
+
+                                    </android.support.constraint.ConstraintLayout>
+
+                                </android.support.v7.widget.CardView>
+
+
+                            </LinearLayout>
+                        </ScrollView>
+                    </LinearLayout>
+
+                </FrameLayout>
+            </LinearLayout>
+        </TabHost>
+
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="112dp"
+        tools:context="com.jed.dininghours.MainActivity">
+
+        <LinearLayout
+            android:id="@+id/listHours"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:orientation="horizontal"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/txtNow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_weight="1"
+                android:text="Now"
+                android:textAlignment="center"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="644dp" />
+
+            <TextView
+                android:id="@+id/txt1hr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_toEndOf="@+id/txtNow"
+                android:layout_weight="1"
+                android:text="1 hr"
+                android:textAlignment="center"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="644dp" />
+
+            <TextView
+                android:id="@+id/txt2hr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_toEndOf="@+id/txt1hr"
+                android:layout_weight="1"
+                android:text="2 hr"
+                android:textAlignment="center"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="644dp" />
+
+            <TextView
+                android:id="@+id/txt3hr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="1"
+                android:text="3 hr"
+                android:textAlignment="center"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="644dp" />
+
+            <TextView
+                android:id="@+id/txt4hr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_toEndOf="@+id/txt3hr"
+                android:layout_weight="1"
+                android:text="4 hr"
+                android:textAlignment="center"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="644dp" />
+
+            <TextView
+                android:id="@+id/txt5hr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_toEndOf="@+id/txt4hr"
+                android:layout_weight="1"
+                android:text="5 hr"
+                android:textAlignment="center"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="644dp" />
+
+            <TextView
+                android:id="@+id/txt6hr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentTop="true"
+                android:layout_weight="1"
+                android:text="6 hr"
+                android:textAlignment="center"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="644dp" />
+
+        </LinearLayout>
+
+        <SeekBar
+            android:id="@+id/seekbarHours"
+            style="@style/Widget.AppCompat.SeekBar.Discrete"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
+            android:fadeScrollbars="false"
+            android:max="12"
+            android:progress="0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/listHours" />
+
+    </android.support.constraint.ConstraintLayout>
+
+
+</com.sothree.slidinguppanel.SlidingUpPanelLayout>
+</RelativeLayout>
